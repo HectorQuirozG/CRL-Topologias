@@ -1,0 +1,33 @@
+enable
+conf term
+hostname SW6
+no ip domain-lookup
+
+interface Fa0/5
+shutdown
+channel-group 2 mode passive
+no shutdown
+interface Fa0/10
+shutdown
+channel-group 2 mode passive
+no shutdown
+
+interface Fa0/2
+shutdown
+channel-group 4 mode active
+no shutdown
+interface Fa0/7
+shutdown
+channel-group 4 mode active
+no shutdown
+
+interface Fa0/1
+shutdown
+channel-group 5 mode passive
+no shutdown
+interface Fa0/6
+shutdown
+channel-group 5 mode passive
+no shutdown
+
+do write memory

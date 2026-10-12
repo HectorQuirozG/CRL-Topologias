@@ -1,0 +1,33 @@
+enable
+conf term
+hostname SW8
+no ip domain-lookup
+
+interface Fa0/3
+shutdown
+channel-group 1 mode active
+no shutdown
+interface Fa0/8
+shutdown
+channel-group 1 mode active
+no shutdown
+
+interface Fa0/5
+shutdown
+channel-group 2 mode active
+no shutdown
+interface Fa0/10
+shutdown
+channel-group 2 mode active
+no shutdown
+
+interface Fa0/4
+shutdown
+channel-group 3 mode passive
+no shutdown
+interface Fa0/9
+shutdown
+channel-group 3 mode passive
+no shutdown
+
+do write memory

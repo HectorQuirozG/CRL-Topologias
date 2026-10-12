@@ -1,0 +1,33 @@
+enable
+conf term
+hostname SW4
+no ip domain-lookup
+
+interface Fa0/3
+shutdown
+channel-group 1 mode desirable
+no shutdown
+interface Fa0/8
+shutdown
+channel-group 1 mode desirable
+no shutdown
+
+interface Fa0/5
+shutdown
+channel-group 2 mode desirable
+no shutdown
+interface Fa0/10
+shutdown
+channel-group 2 mode desirable
+no shutdown
+
+interface Fa0/4
+shutdown
+channel-group 3 mode auto
+no shutdown
+interface Fa0/9
+shutdown
+channel-group 3 mode auto
+no shutdown
+
+do write memory
